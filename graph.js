@@ -16,10 +16,10 @@ var draw=function()
 
 var drawChart=function(data)
 {
-  var width=1000;
+  var width=1100;
   var height=500;
   var padding=50;
-  var barWidth=(width-100)/data.length;
+  var barWidth=(width-60)/data.length;
 
   var yScale = d3.scaleLinear()
                 .domain([0, d3.max(data, function(d) { return d.starting; })])
@@ -67,7 +67,7 @@ var drawChart=function(data)
        return d.starting;
      })
      .attr("x",function(d,i){
-       return i*barWidth+padding+10;
+       return i*barWidth+padding+8;
      })
      .attr("y",function(d,i){
        return yScale(d.starting)+14;
