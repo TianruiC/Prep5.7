@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart of colors</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+    body{
+      background-color: #EDF0EC;
+      color:#121314;
+    }
+    p{
+      font-size: 20px;
+    }
+    button{
+      font-size: 15px;
+      font-style:normal;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Bar Chart of Color</h1>
+    <p> For this lab, we found out that the code that draws the two diagrams totally overlaps.
+      <br/>We can just use one single function called drawChart( ) which will take the data from json file or csv file as input to draw the two diagrams.
+      <br/>Here are the pesudo code for how to draw the diagrams using different kinds of files.
+      <br/><br/>First use the d3 to select the data:
+      <br/><i>var dataP=d3.json/csv("colordata.json/csv");</i>
+      <br/><br/>Then use the data we select to call the drawChart( ) function:
+      <br/><i>dataP.then(function(data)
+      <br/>{
+        <br/>drawChart(data);
+      <br/>},
+      <br/>function(err)
+      <br/>{
+        <br/>console.log(err);
+      <br/>})</i>
+      <br/>We only need to change the <i>var dataP</i> to draw two diagrams from different kinds of files. And you can take a closer look at our <a href="graph1.js">js file.</a>
+      <br/><br/>In order to distinguish the difference between the graph created by
+      <a href="colordata.json">json file</a> and <a href="colordata.csv">csv file</a>, we made a little change to the data.
+      <br/>As you can see by clicking the links for those two data, the json file has blue as the first color, but csv file has red as the first color.
+      <br/>Try clicking the buttons below to create those two diagrams.
+    </p>
+    <button onclick=draw() type="button" id="button1">Let's draw it!</button>
+    <div/>
+    <script type="text/javascript" src="graph.js">
+      </script>
+  </body>
+</html>
